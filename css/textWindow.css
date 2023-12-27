@@ -1,0 +1,47 @@
+[data-theme='light'] #popup {/*根据网站明暗更改*/
+    background-color: #e1e1e1;/*这里更改主体背景色*/
+    box-shadow: 0 0 10px rgb(114, 113, 113);
+  }
+[data-theme='dark'] #popup {
+    background: #3b443e ;/*这里更改主体背景色*/
+    box-shadow: 0 0 10px rgb(29, 29, 29);
+  }  
+
+#popup {
+    position: fixed;
+    right: 1vh;
+    top: 2vh;
+    width: 350px; 
+    height: 125px; 
+    border: 8px ;
+    z-index: 1000000;
+    border-radius: 8px;
+    opacity: 0;
+  }
+#popup h1 {
+    font-size: 20px !important;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+#popup p {
+    position: absolute;
+    width: 250px;
+    font-size: 15px !important;
+    margin-left: 15px;
+    margin-top: 0px ;
+  }
+  
+#close {
+    position: absolute;
+    width: 50px; 
+    height: 110px; 
+    margin-left: 292.5px; 
+    margin-top: 7.5px; 
+    border: none; 
+    color: black; 
+    border-radius: 8px;
+    z-index: 1000001;
+    background-color: #6a94b3;/*这里更改按钮背景色*/ 
+  }
+
