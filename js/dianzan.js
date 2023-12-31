@@ -18,7 +18,7 @@ $(document).ready(function () {
     AV.init({
         appId: "MXUeFvB5oRPBlL1rnn1ZQZ97-gzGzoHsz",
         appKey: "bP2LpuRZQPTKsE2yhN4CcN4w",
-        serverURL: "jiazixin.xyz"
+        serverURL: "https://mxuefvb5.lc-cn-n1-shared.com"
     });
     var dianzans = [];
     var hrefs = [];
