@@ -334,11 +334,10 @@
 <p>例如 ssh root@jzx，就是用root用户登录主机名为jzx的服务器中。</p>
 <p>若遇到permission denied等问题，去查解决方案。</p>
 <p>主流的一些工具，如Xshell，Finalshell都是用ssh免密登录的</p>
-<h3 id="系统管理📚"><a href="#系统管理📚" class="headerlink" title="系统管理📚"></a>系统管理📚</h3><h4 id="Linux中的进程和服务🤹‍♂️"><a href="#Linux中的进程和服务🤹‍♂️" class="headerlink" title="Linux中的进程和服务🤹‍♂️"></a>Linux中的进程和服务🤹‍♂️</h4><p>**进程(process)**：计算机中一个正在执行的程序或命令</p>
-<p><strong>服务(service)</strong>:启动之后一直存在、常驻内存的进程</p>
-<p>**守护进程(daemon)**：执行系统服务的进程</p>
-<p>​	有些以d结尾的服务，都是守护进程。</p>
-<p>在linux中，守护进程就是系统服务</p>
+<h3 id="系统管理📚"><a href="#系统管理📚" class="headerlink" title="系统管理📚"></a>系统管理📚</h3><h4 id="Linux中的进程和服务🤹‍♂️"><a href="#Linux中的进程和服务🤹‍♂️" class="headerlink" title="Linux中的进程和服务🤹‍♂️"></a>Linux中的进程和服务🤹‍♂️</h4><p><em>进程(process)</em>:计算机中一个正在执行的程序或命令。</p>
+<p>*服务(service):*启动之后一直存在、常驻内存的进程。</p>
+<p>**守护进程(daemon)**：执行系统服务的进程。</p>
+<p><strong>注意</strong>:有些以d结尾的服务，都是守护进程;在linux中，守护进程就是系统服务</p>
 <h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
       <categories>
         <category>自用</category>
