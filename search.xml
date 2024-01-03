@@ -64,7 +64,282 @@
 <li><img src="/img/linux/06.png"></li>
 <li>使用VMware创建虚拟机，也可买个单机装、双系统、WSL、docker…</li>
 </ol>
-<h3 id="文件与目录结构"><a href="#文件与目录结构" class="headerlink" title="文件与目录结构"></a>文件与目录结构</h3><h3 id="vi-vim编辑器"><a href="#vi-vim编辑器" class="headerlink" title="vi&#x2F;vim编辑器"></a>vi&#x2F;vim编辑器</h3><h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h3><h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
+<h3 id="文件与目录结构🏂"><a href="#文件与目录结构🏂" class="headerlink" title="文件与目录结构🏂"></a>文件与目录结构🏂</h3><h4 id="Linux文件🏄‍♂️"><a href="#Linux文件🏄‍♂️" class="headerlink" title="Linux文件🏄‍♂️"></a>Linux文件🏄‍♂️</h4><p>Linux系统中一切届文件</p>
+<h4 id="挂载点🏄‍♂️"><a href="#挂载点🏄‍♂️" class="headerlink" title="挂载点🏄‍♂️"></a><strong>挂载点🏄‍♂️</strong></h4><p>假设你有一个 USB 存储设备（如闪存驱动器或移动硬盘），你想要在 Linux 中访问该设备上的文件。首先，你需要找到一个目录，作为该设备的挂载点。你可以选择一个现有的目录，如 <code>/mnt</code> 或 <code>/media</code>，或者创建一个新的目录，如 <code>/mnt/usb</code>。</p>
+<p>然后，通过执行挂载命令，将该 USB 设备与挂载点关联起来。例如，使用以下命令将 <code>/dev/sdb1</code>（USB 设备的第一个分区）挂载到 <code>/mnt/usb</code> 目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sdb1 /mnt/usb</span><br></pre></td></tr></table></figure>
+
+<p>执行此命令后，USB 设备上的文件和文件夹就可以通过 <code>/mnt/usb</code> 目录进行访问了。你可以在终端中浏览该目录，查看和操作 USB 设备上的文件。</p>
+<p>当你完成使用 USB 设备后，可以使用 <code>umount</code> 命令卸载挂载点，断开设备与文件系统之间的连接：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umount /mnt/usb</span><br></pre></td></tr></table></figure>
+
+<p>这样，USB 设备就会从挂载点上卸载，不再与文件系统关联。</p>
+<p>总而言之，挂载点是将存储设备或分区与文件系统层次结构中的特定目录连接起来的过程。通过挂载，设备上的文件和文件夹可以在指定的目录下进行访问和操作。</p>
+<p><em>Linux的目录也叫作虚拟目录（不管底层到底存在哪，逻辑上有映射关系就行）</em></p>
+<h4 id="Linux目录结构🏄‍♂️"><a href="#Linux目录结构🏄‍♂️" class="headerlink" title="Linux目录结构🏄‍♂️"></a>Linux目录结构🏄‍♂️</h4><p><img src="/img/linux/07.jpg"></p>
+<p>👉**&#x2F;bin：** Binary的缩写。存放系统命令，普通用户和 root 都可以执行。放在 &#x2F;bin 下的命令在单用户模式下也可以执行。<br>👉**&#x2F;boot：** 这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。<br>👉**&#x2F;dev：** Device的缩写。该目录下存放的是 Linux 的<strong>外部设备</strong>，在 Linux 中访问设备的方式和访问文件的方式是相同的。<br>👉**&#x2F;etc：** Etcetera的缩写。这个目录用来存放所有的系统管理所需要的<strong>配置文件</strong>和子目录。<br>👉**&#x2F;home：** 用户的(<strong>普通用户</strong>，<em>超级用户在&#x2F;root下</em>)主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。<br>👉**&#x2F;lib：** Library的缩写。这个目录里存放着系统最基本的<em><strong>动态连接共享库</strong></em>，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。<br>👉**&#x2F;lib64：** 64位相关的库会放在这。<br>👉**&#x2F;media：** linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备<strong>挂载</strong>到这个目录下。<br>👉**&#x2F;mnt：** 系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了。<br>👉**&#x2F;opt：** optional的缩写。这是给主机额外安装软件所摆放的目录(第三方软件都可以放到这个目录下)。<br>👉**&#x2F;proc：** Processes的缩写。&#x2F;proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里<br>👉**&#x2F;root：** 该目录为系统管理员，也称作超级权限者的<strong>用户主目录</strong>。<br>👉&#x2F;<strong>run：</strong> 运行目录<br>👉**&#x2F;sbin：** s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。<br>👉**&#x2F;srv：** service的缩写，该目录存放一些服务启动之后需要提取的数据。<br>👉**&#x2F;sys：** system的缩写，虚拟文件系统。和 &#x2F;proc&#x2F; 目录相似，该目录中的数据都保存在内存中，主要保存与内核相关的信息<br>👉**&#x2F;tmp：** temporary的缩写这个目录是用来存放一些临时文件的。<br>👉**&#x2F;usr：** unix system resources缩写。用于存储系统软件资源。<br>👉**&#x2F;var：** 用于存储动态数据，例如<strong>缓存、日志文件、软件运行过程中产生的文件</strong>等</p>
+<p>上述目录结构介绍引用自该<a href="https://blog.csdn.net/da_ge_de_nv_ren/article/details/128391575">博客</a></p>
+<h3 id="vi-vim编辑器🎫"><a href="#vi-vim编辑器🎫" class="headerlink" title="vi&#x2F;vim编辑器🎫"></a>vi&#x2F;vim编辑器🎫</h3><p><img src="/img/linux/08.gif"></p>
+<p><em>vi和vim都是多模式编辑器，区别在于：vim 是vi的升级版本，它不仅兼容vi的所有指令，而且还有一些新的特性在里面。vi使用于文本编辑，但是vim更适用于coding。</em> </p>
+<p>vim(编辑器之神) emacs(神之编辑器)</p>
+<p><img src="/img/linux/09.png"></p>
+<h4 id="一般-普通-模式🏌️‍♂️"><a href="#一般-普通-模式🏌️‍♂️" class="headerlink" title="一般(普通)模式🏌️‍♂️"></a>一般(普通)模式🏌️‍♂️</h4><p><strong>用户刚刚启动 vi&#x2F;vim，便进入了命令模式。</strong></p>
+<p>此状态下敲击键盘动作会被 Vim 识别为命令，而非输入字符，比如我们此时按下 <strong>i</strong>，并不会输入一个字符，<strong>i</strong> 被当作了一个命令。</p>
+<p>以下是普通模式常用的几个命令：</p>
+<table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">切换到输入模式，在光标当前位置开始输入文本</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">剪切当前光标所在处的字符(从左往后)</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">剪切当前光标所在处的字符(从右往左)</td>
+</tr>
+<tr>
+<td align="center">:</td>
+<td align="center">切换到底线命令模式，以在最底一行输入命令</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">进入插入模式，在光标下一个位置开始输入文本</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center">在当前行的下方插入一个新行，并进入插入模式</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td align="center">跳转到当前光标指向单词的下一个单词</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="center">替换当前光标所在的字符   （<em>如r+1 把r替换成1</em>)</td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="center">进入替换模式(可看作特殊的插入模式)</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center">在当前行的上方插入一个新行，并进入插入模式</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">删除当前行                <em>3 + dd 删除3行</em></td>
+</tr>
+<tr>
+<td align="center">yy</td>
+<td align="center">复制当前行                <em>8 + yy 复制8行</em></td>
+</tr>
+<tr>
+<td align="center"><em>y$</em></td>
+<td align="center">复制光标之后的所有内容</td>
+</tr>
+<tr>
+<td align="center"><em>y^</em></td>
+<td align="center">复制光标之前的所有内容</td>
+</tr>
+<tr>
+<td align="center"><em>y+w</em></td>
+<td align="center">复制当前光标所在的单词(w是word)</td>
+</tr>
+<tr>
+<td align="center"><em>d+w</em></td>
+<td align="center">删除当前光标所在的单词(w是word)</td>
+</tr>
+<tr>
+<td align="center">p (小写)</td>
+<td align="center">粘贴剪贴板内容到光标下方    <em>5+p复制5行</em></td>
+</tr>
+<tr>
+<td align="center">P (大写)</td>
+<td align="center">粘贴剪贴板内容到光标上方</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="center">撤销上一次操作</td>
+</tr>
+<tr>
+<td align="center">Ctrl + r</td>
+<td align="center">重做上一次撤销的操作</td>
+</tr>
+<tr>
+<td align="center">:w</td>
+<td align="center">保存文件</td>
+</tr>
+<tr>
+<td align="center">:q</td>
+<td align="center">退出 Vim 编辑器</td>
+</tr>
+<tr>
+<td align="center">:q!</td>
+<td align="center">强制退出 Vim 编辑器，不保存修改</td>
+</tr>
+<tr>
+<td align="center">shit + ^</td>
+<td align="center">移动到行首</td>
+</tr>
+<tr>
+<td align="center">shift + $</td>
+<td align="center">移动到行尾</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="center">移动到第一行的行首</td>
+</tr>
+<tr>
+<td align="center">GG</td>
+<td align="center">移动到最后一行的行首</td>
+</tr>
+<tr>
+<td align="center">数字+G</td>
+<td align="center">移动到指定行行首</td>
+</tr>
+</tbody></table>
+<p><strong>vim关于永久行号的配置</strong>&#x3D;&gt;<a href="https://blog.csdn.net/weixin_43025343/article/details/123241388?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170426108916800211519045%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170426108916800211519045&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-123241388-null-null.142%5Ev99%5Epc_search_result_base1&utm_term=vim%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7&spm=1018.2226.3001.4187">看此博客介绍</a></p>
+<h4 id="编辑模式🏌️‍♂️"><a href="#编辑模式🏌️‍♂️" class="headerlink" title="编辑模式🏌️‍♂️"></a>编辑模式🏌️‍♂️</h4><table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">从当前光标处进入插入模式</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">进入插入模式，并置光标于行首</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">追加模式，置光标于当前光标之后</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">追加模式，置光标于行末</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center">在当前行之下新加一行，并进入插入模式</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center">在当前行之上新加一行，并进入插入模式</td>
+</tr>
+<tr>
+<td align="center">Esc</td>
+<td align="center">退出插入模式</td>
+</tr>
+</tbody></table>
+<h4 id="命令模式🏌️‍♂️"><a href="#命令模式🏌️‍♂️" class="headerlink" title="命令模式🏌️‍♂️"></a>命令模式🏌️‍♂️</h4><p><em><strong>可以看作一般模式下的特殊操作</strong></em></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:w</td>
+<td align="center">保存当前文件</td>
+</tr>
+<tr>
+<td align="center">:w!</td>
+<td align="center">强制保存当前文件，即使是只读文件</td>
+</tr>
+<tr>
+<td align="center">:q</td>
+<td align="center">退出 Vim 编辑器</td>
+</tr>
+<tr>
+<td align="center">:q!</td>
+<td align="center">强制退出 Vim 编辑器，丢弃修改</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="center">保存并退出 Vim 编辑器</td>
+</tr>
+<tr>
+<td align="center">ZZ</td>
+<td align="center">等同于 :wq，保存并退出 Vim 编辑器</td>
+</tr>
+<tr>
+<td align="center">ZQ</td>
+<td align="center">等同于 :q!，强制退出 Vim 编辑器</td>
+</tr>
+<tr>
+<td align="center">:w [文件名]</td>
+<td align="center">将编辑的数据保存到另一个文件</td>
+</tr>
+<tr>
+<td align="center">:r [文件名]</td>
+<td align="center">在当前行后插入指定文件的内容</td>
+</tr>
+<tr>
+<td align="center">:n1,n2 w [文件名]</td>
+<td align="center">将 n1 到 n2 行的内容保存到指定文件</td>
+</tr>
+<tr>
+<td align="center">:!命令</td>
+<td align="center">在指令行模式下执行命令，并显示结果</td>
+</tr>
+<tr>
+<td align="center">:set nu</td>
+<td align="center">显示行号</td>
+</tr>
+<tr>
+<td align="center">:set nonu</td>
+<td align="center">取消显示行号</td>
+</tr>
+<tr>
+<td align="center">:noh</td>
+<td align="center">取消高亮显示当前搜索的匹配项</td>
+</tr>
+<tr>
+<td align="center">&#x2F; + 你想要搜索的stirng</td>
+<td align="center">搜索后会高亮显示，n向下找，N向上找</td>
+</tr>
+<tr>
+<td align="center">:s&#x2F;old&#x2F;new</td>
+<td align="center">替换<strong>当前行第一个</strong>匹配到的 old 为 new</td>
+</tr>
+<tr>
+<td align="center">:s&#x2F;old&#x2F;new&#x2F;g</td>
+<td align="center">替换<strong>当前行所有</strong>匹配到的 old 为 new</td>
+</tr>
+<tr>
+<td align="center">:%s&#x2F;old&#x2F;new</td>
+<td align="center">替换<strong>整个文档</strong>中每一行第一个匹配到的 old 为 new</td>
+</tr>
+<tr>
+<td align="center">:%s&#x2F;old&#x2F;new&#x2F;g</td>
+<td align="center">替换整个文档中所有匹配到的 old 为 new</td>
+</tr>
+</tbody></table>
+<h3 id="网络配置🤖"><a href="#网络配置🤖" class="headerlink" title="网络配置🤖"></a>网络配置🤖</h3><p>先了解一下网络吧 <a href="https://hoochanlon.github.io/helpdesk-guide/enhance/net/neta.html#ip%E5%9C%B0%E5%9D%80%E7%9A%84%E8%AE%BE%E8%AE%A1">一篇全文让你彻底理清IP地址、子网掩码、网关</a>、<a href="https://www.bilibili.com/video/BV1xu411f7UW/?spm_id_from=333.337.search-card.all.click&vd_source=4452cbcad134fb17ec9cfb03a0acbdac">子网掩码的介绍</a>、<a href="https://www.bilibili.com/video/BV1aF411v7hU/?spm_id_from=pageDriver&vd_source=4452cbcad134fb17ec9cfb03a0acbdac">IPv6和IPv4的主要区别？子网掩码，二进制转化，地址分类，头部，安全有什么不同？</a>、<a href="https://www.bilibili.com/video/BV1Gz4y1r791/?spm_id_from=333.337.search-card.all.click&vd_source=4452cbcad134fb17ec9cfb03a0acbdac">小白成神之路，网络知识看这一期足矣！软路由 桥接 端口转发 旁路由 单臂路由 IPv4 IPv6 DDNS</a>、<a href="https://www.bilibili.com/video/BV1vp4y1L7Yb/?spm_id_from=333.788.recommend_more_video.0&vd_source=4452cbcad134fb17ec9cfb03a0acbdac">走出这个视频时，你也可以【懂一点电脑】</a></p>
+<h5 id="远程登录👩‍🏫"><a href="#远程登录👩‍🏫" class="headerlink" title="远程登录👩‍🏫"></a>远程登录👩‍🏫</h5><p>本地远程登录linux，以ssh为例</p>
+<p>ssh root@ip或者hostname</p>
+<p>例如 ssh root@jzx，就是用root用户登录主机名为jzx的服务器中。</p>
+<p>若遇到permission denied等问题，去查解决方案。</p>
+<p>主流的一些工具，如Xshell，Finalshell都是用ssh免密登录的</p>
+<h3 id="系统管理📚"><a href="#系统管理📚" class="headerlink" title="系统管理📚"></a>系统管理📚</h3><h4 id="Linux中的进程和服务🤹‍♂️"><a href="#Linux中的进程和服务🤹‍♂️" class="headerlink" title="Linux中的进程和服务🤹‍♂️"></a>Linux中的进程和服务🤹‍♂️</h4><p>**进程(process):**计算机中一个正在执行的程序或命令</p>
+<p>**服务(service):**启动之后一直存在、常驻内存的进程</p>
+<p><strong>守护进程(daemon)：</strong>执行系统服务的进程</p>
+<p>​	有些以d结尾的服务，都是守护进程。</p>
+<p>在linux中，守护进程就是系统服务</p>
+<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
       <categories>
         <category>自用</category>
       </categories>
