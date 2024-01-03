@@ -22,6 +22,57 @@
       </tags>
   </entry>
   <entry>
+    <title>linux(持续更新)</title>
+    <url>/2024/01/02/Linux/</url>
+    <content><![CDATA[<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h3 id="概述📚"><a href="#概述📚" class="headerlink" title="概述📚"></a>概述📚</h3><p>一个OS，最底层的软件，是跟Windows和macOS并驾齐驱的一个OS。Linus Torvalds基于开源的Minux上面做改进，最后发现不如重写一个—Linux，并且公开源代码。</p>
+<p>Unix(早期开源，后来商业化后不开源) -&gt; Minix(Unix的变种 开源) -&gt; Linux</p>
+<p><img src="/img/linux/01.png"></p>
+<p><em>Unix诞生后，由于用汇编开发过于麻烦，Unix创造者又要发明高级语言，第一次B语言，效果不好失败了，然后又发明new B（大神的乐趣），取名<strong>C语言</strong>。</em></p>
+<h4 id="GNU-Linux🐱‍🏍"><a href="#GNU-Linux🐱‍🏍" class="headerlink" title="GNU&#x2F;Linux🐱‍🏍"></a>GNU&#x2F;Linux🐱‍🏍</h4><p>简要介绍 Linux 内核、Linux 系统和 GNU 工具。</p>
+<ol>
+<li>Linux 内核：<ul>
+<li>Linux 内核是操作系统的核心组件，它是一个开源的、免费的、可移植的操作系统内核。它由芬兰计算机科学家 Linus Torvalds 在 1991 年创建，并在全球范围内得到了广泛的开发和贡献。</li>
+<li>Linux 内核负责管理计算机的硬件资源，如处理器、内存、设备驱动程序和文件系统等。它提供了一个稳定的、安全的和高性能的运行环境，让应用程序和用户能够与计算机系统进行交互。</li>
+<li>Linux 内核采用了模块化的设计，可以根据需要加载和卸载不同的模块，从而支持广泛的硬件设备和功能。</li>
+</ul>
+</li>
+<li>Linux 系统：<ul>
+<li>Linux 系统指的是基于 Linux 内核的操作系统。它是一个完整的操作系统，包括了 Linux 内核和其他一系列的软件和工具，以提供完整的计算机操作环境。</li>
+<li>Linux 系统提供了许多功能和特性，如多任务处理、多用户支持、网络通信、文件管理和安全性等。它也支持各种应用程序和开发工具，可以运行服务器、个人计算机、嵌入式设备和移动设备等不同类型的硬件平台。</li>
+</ul>
+</li>
+<li>GNU 工具：<ul>
+<li>GNU 是一个自由软件项目，旨在开发一套完全自由的操作系统。GNU 代表 “GNU’s Not Unix”，它的目标是创建一个类似于 Unix 的操作系统，但完全由自由软件组成。</li>
+<li>GNU 工具是 GNU 项目开发的一套软件工具集，包括编译器、调试器、文本编辑器、Shell 等。这些工具为 Linux 系统提供了基本的用户界面和开发环境。</li>
+<li>GNU 工具中最著名的组件是 GCC（GNU Compiler Collection），它是一个功能强大的编译器套件，支持多种编程语言，如 C、C++、Fortran 和 Ada 等。</li>
+</ul>
+</li>
+</ol>
+<p>综上所述，Linux 包括了 Linux 内核和 GNU 工具，它们共同构成了一个功能强大的、免费的、开源的操作系统。Linux 内核负责管理硬件和提供核心功能，而 GNU 工具提供了用户界面、开发环境和其他实用工具。这使得 Linux 成为一种受欢迎的操作系统，并被广泛用于各种计算机和设备。</p>
+<h4 id="用处🐱‍🏍"><a href="#用处🐱‍🏍" class="headerlink" title="用处🐱‍🏍"></a>用处🐱‍🏍</h4><p>学习Linux可以做运维工程师（系统运维、应用运维、DBA）、开发工程师(内核&#x2F;驱动开发、基于linux的软件开发、嵌入式开发(偏底层，用C&#x2F;C++))，从行业上来讲，后台开发如java开发、数据库开发，物联网开发、架构师都要懂linux，大数据、云计算这种面对服务器集群的行业更需要。可以认为是<strong>高级程序员必备技能</strong></p>
+<p>我们安装的都是广义的linux，多了命令解释层和外围应用层</p>
+<p><img src="/img/linux/02.png"></p>
+<p><img src="/img/linux/04.png"></p>
+<p>客户端Android系统，国产操作系统deepin也可作了解</p>
+<h4 id="linux和windows区别🐱‍🏍"><a href="#linux和windows区别🐱‍🏍" class="headerlink" title="linux和windows区别🐱‍🏍"></a>linux和windows区别🐱‍🏍</h4><p><img src="/img/linux/03.png"></p>
+<h3 id="安装步骤👔"><a href="#安装步骤👔" class="headerlink" title="安装步骤👔"></a>安装步骤👔</h3><p><em>先比较一下centos和ubuntu</em></p>
+<p><img src="/img/linux/05.png"></p>
+<ol>
+<li><strong>centOS</strong>下载地址<a href="https://centos.org/download/">https://centos.org/download/</a></li>
+<li>下载7.9版本，使用阿里云镜像<a href="https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/</a></li>
+<li>选择标准版</li>
+<li><img src="/img/linux/06.png"></li>
+<li>使用VMware创建虚拟机，也可买个单机装、双系统、WSL、docker…</li>
+</ol>
+<h3 id="文件与目录结构"><a href="#文件与目录结构" class="headerlink" title="文件与目录结构"></a>文件与目录结构</h3><h3 id="vi-vim编辑器"><a href="#vi-vim编辑器" class="headerlink" title="vi&#x2F;vim编辑器"></a>vi&#x2F;vim编辑器</h3><h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h3><h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
+      <categories>
+        <category>自用</category>
+      </categories>
+      <tags>
+        <tag>工程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自用算法笔记(持续更新)</title>
     <url>/2023/12/26/%E8%87%AA%E7%94%A8%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h1><h2 id="1-第一章-基础算法"><a href="#1-第一章-基础算法" class="headerlink" title="1.第一章 基础算法"></a>1.第一章 基础算法</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>重视思想 </p>
@@ -328,57 +379,6 @@
       </categories>
       <tags>
         <tag>算法(刷题向)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux(持续更新)</title>
-    <url>/2024/01/02/Linux/</url>
-    <content><![CDATA[<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h3 id="概述📚"><a href="#概述📚" class="headerlink" title="概述📚"></a>概述📚</h3><p>一个OS，最底层的软件，是跟Windows和macOS并驾齐驱的一个OS。Linus Torvalds基于开源的Minux上面做改进，最后发现不如重写一个—Linux，并且公开源代码。</p>
-<p>Unix(早期开源，后来商业化后不开源) -&gt; Minix(Unix的变种 开源) -&gt; Linux</p>
-<p><img src="/img/linux/01.png"></p>
-<p><em>Unix诞生后，由于用汇编开发过于麻烦，Unix创造者又要发明高级语言，第一次B语言，效果不好失败了，然后又发明new B（大神的乐趣），取名<strong>C语言</strong>。</em></p>
-<h4 id="GNU-Linux🐱‍🏍"><a href="#GNU-Linux🐱‍🏍" class="headerlink" title="GNU&#x2F;Linux🐱‍🏍"></a>GNU&#x2F;Linux🐱‍🏍</h4><p>简要介绍 Linux 内核、Linux 系统和 GNU 工具。</p>
-<ol>
-<li>Linux 内核：<ul>
-<li>Linux 内核是操作系统的核心组件，它是一个开源的、免费的、可移植的操作系统内核。它由芬兰计算机科学家 Linus Torvalds 在 1991 年创建，并在全球范围内得到了广泛的开发和贡献。</li>
-<li>Linux 内核负责管理计算机的硬件资源，如处理器、内存、设备驱动程序和文件系统等。它提供了一个稳定的、安全的和高性能的运行环境，让应用程序和用户能够与计算机系统进行交互。</li>
-<li>Linux 内核采用了模块化的设计，可以根据需要加载和卸载不同的模块，从而支持广泛的硬件设备和功能。</li>
-</ul>
-</li>
-<li>Linux 系统：<ul>
-<li>Linux 系统指的是基于 Linux 内核的操作系统。它是一个完整的操作系统，包括了 Linux 内核和其他一系列的软件和工具，以提供完整的计算机操作环境。</li>
-<li>Linux 系统提供了许多功能和特性，如多任务处理、多用户支持、网络通信、文件管理和安全性等。它也支持各种应用程序和开发工具，可以运行服务器、个人计算机、嵌入式设备和移动设备等不同类型的硬件平台。</li>
-</ul>
-</li>
-<li>GNU 工具：<ul>
-<li>GNU 是一个自由软件项目，旨在开发一套完全自由的操作系统。GNU 代表 “GNU’s Not Unix”，它的目标是创建一个类似于 Unix 的操作系统，但完全由自由软件组成。</li>
-<li>GNU 工具是 GNU 项目开发的一套软件工具集，包括编译器、调试器、文本编辑器、Shell 等。这些工具为 Linux 系统提供了基本的用户界面和开发环境。</li>
-<li>GNU 工具中最著名的组件是 GCC（GNU Compiler Collection），它是一个功能强大的编译器套件，支持多种编程语言，如 C、C++、Fortran 和 Ada 等。</li>
-</ul>
-</li>
-</ol>
-<p>综上所述，Linux 包括了 Linux 内核和 GNU 工具，它们共同构成了一个功能强大的、免费的、开源的操作系统。Linux 内核负责管理硬件和提供核心功能，而 GNU 工具提供了用户界面、开发环境和其他实用工具。这使得 Linux 成为一种受欢迎的操作系统，并被广泛用于各种计算机和设备。</p>
-<h4 id="用处🐱‍🏍"><a href="#用处🐱‍🏍" class="headerlink" title="用处🐱‍🏍"></a>用处🐱‍🏍</h4><p>学习Linux可以做运维工程师（系统运维、应用运维、DBA）、开发工程师(内核&#x2F;驱动开发、基于linux的软件开发、嵌入式开发(偏底层，用C&#x2F;C++))，从行业上来讲，后台开发如java开发、数据库开发，物联网开发、架构师都要懂linux，大数据、云计算这种面对服务器集群的行业更需要。可以认为是<strong>高级程序员必备技能</strong></p>
-<p>我们安装的都是广义的linux，多了命令解释层和外围应用层</p>
-<p><img src="/img/linux/02.png"></p>
-<p><img src="/img/linux/04.png"></p>
-<p>客户端Android系统，国产操作系统deepin也可作了解</p>
-<h4 id="linux和windows区别🐱‍🏍"><a href="#linux和windows区别🐱‍🏍" class="headerlink" title="linux和windows区别🐱‍🏍"></a>linux和windows区别🐱‍🏍</h4><p><img src="/img/linux/03.png"></p>
-<h3 id="安装步骤👔"><a href="#安装步骤👔" class="headerlink" title="安装步骤👔"></a>安装步骤👔</h3><p><em>先比较一下centos和ubuntu</em></p>
-<p><img src="/img/linux/05.png"></p>
-<ol>
-<li><strong>centOS</strong>下载地址<a href="https://centos.org/download/">https://centos.org/download/</a></li>
-<li>下载7.9版本，使用阿里云镜像<a href="https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/</a></li>
-<li>选择标准版</li>
-<li><img src="/img/linux/06.png"></li>
-<li>使用VMware创建虚拟机，也可买个单机装、双系统、WSL、docker…</li>
-</ol>
-<h3 id="文件与目录结构"><a href="#文件与目录结构" class="headerlink" title="文件与目录结构"></a>文件与目录结构</h3><h3 id="vi-vim编辑器"><a href="#vi-vim编辑器" class="headerlink" title="vi&#x2F;vim编辑器"></a>vi&#x2F;vim编辑器</h3><h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h3><h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
-      <categories>
-        <category>自用</category>
-      </categories>
-      <tags>
-        <tag>工程</tag>
       </tags>
   </entry>
 </search>
