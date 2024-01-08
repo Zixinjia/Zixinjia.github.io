@@ -338,7 +338,394 @@
 <p><strong>服务(service):</strong> 启动之后一直存在、常驻内存的进程</p>
 <p><strong>守护进程(daemon):</strong> 执行系统服务的进程</p>
 <p><strong>注意</strong>:有些以d结尾的服务，都是守护进程;在linux中，守护进程就是系统服务</p>
-<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><h3 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h3><h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><h3 id="用户管理类"><a href="#用户管理类" class="headerlink" title="用户管理类"></a>用户管理类</h3><h3 id="文件权限类"><a href="#文件权限类" class="headerlink" title="文件权限类"></a>文件权限类</h3><h3 id="磁盘分区类"><a href="#磁盘分区类" class="headerlink" title="磁盘分区类"></a>磁盘分区类</h3><h3 id="进程线程类"><a href="#进程线程类" class="headerlink" title="进程线程类"></a>进程线程类</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="克隆虚拟机"><a href="#克隆虚拟机" class="headerlink" title="克隆虚拟机"></a>克隆虚拟机</h3><h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3>]]></content>
+<h5 id="远程登录👩‍🏫-1"><a href="#远程登录👩‍🏫-1" class="headerlink" title="远程登录👩‍🏫"></a>远程登录👩‍🏫</h5><p>本地远程登录linux，以ssh为例</p>
+<p>ssh root@ip或者hostname</p>
+<p>例如 ssh root@jzx，就是用root用户登录主机名为jzx的服务器中。</p>
+<p>若遇到permission denied等问题，去查解决方案。</p>
+<p>主流的一些工具，如Xshell，Finalshell都是用ssh免密登录的</p>
+<h3 id="系统管理📚-1"><a href="#系统管理📚-1" class="headerlink" title="系统管理📚"></a>系统管理📚</h3><h4 id="Linux中的进程和服务🤹‍♂️-1"><a href="#Linux中的进程和服务🤹‍♂️-1" class="headerlink" title="Linux中的进程和服务🤹‍♂️"></a>Linux中的进程和服务🤹‍♂️</h4><p><strong><em>进程(process)</em>:</strong> 计算机中一个正在执行的程序或命令</p>
+<p><strong>服务(service):</strong> 启动之后一直存在、常驻内存的进程</p>
+<p><strong>守护进程(daemon):</strong> 执行系统服务的进程</p>
+<p><strong>注意</strong>:有些以d结尾的服务，都是守护进程;在linux中，守护进程就是系统服务</p>
+<h2 id="常用基本命令☝"><a href="#常用基本命令☝" class="headerlink" title="常用基本命令☝"></a>常用基本命令☝</h2><p>shell可以看作一个命令解释器，我们输入给终端控制台的命令，通过shell进行解释并最终交给内核执行。</p>
+<p>Bash（全称<strong>Bourne-Again SHell</strong>）是GNU 开发的一个Shell。 Bash 是目前绝大多数Linux 发行版的默认Shell</p>
+<h3 id="帮助命令👈"><a href="#帮助命令👈" class="headerlink" title="帮助命令👈"></a>帮助命令👈</h3><p>1.<strong>man</strong> : 获得外部命令帮助信息 ，如man ls</p>
+<p>2.<strong>help</strong> : 获得shell内置命令的帮助信息，如help cd</p>
+<p><em>help看参数用法更方便，但是只能看内嵌命令的</em></p>
+<p>不过有个对于外部命令看起来更方便的，如ls –help。</p>
+<p>但是想看最全的还得是man </p>
+<p><strong>提示</strong> : 可以用type 命令判断是哪种 </p>
+<p><strong>shell中常用快捷键:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">常用快捷键</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ctrl + c</td>
+<td align="center">停止进程</td>
+</tr>
+<tr>
+<td align="center">ctrl + l</td>
+<td align="center">清屏，等同于clear；彻底清屏是: reset</td>
+</tr>
+<tr>
+<td align="center">善于用tab键</td>
+<td align="center">提示(更重要的是可以防止敲错)</td>
+</tr>
+<tr>
+<td align="center">上下键</td>
+<td align="center">查找执行过的命令</td>
+</tr>
+</tbody></table>
+<h3 id="文件目录类👈"><a href="#文件目录类👈" class="headerlink" title="文件目录类👈"></a>文件目录类👈</h3><p><img src="/img/linux/10.gif"></p>
+<p><strong>cd &#x2F;</strong>: 在<a href="https://so.csdn.net/so/search?q=Linux&spm=1001.2101.3001.7020">Linux</a> 系统中斜杠“&#x2F;”表示的是<strong>根目录</strong>。cd &#x2F; ,即进入根目录.<br><strong>cd ~<strong>命令是，进入用户在</strong>该系统的home目录</strong>，例如xz用户，则进入&#x2F;root&#x2F;xz目录</p>
+<p><strong>cd -</strong> 回到上一个文件夹,可以在两个目录里反复横跳</p>
+<p><strong>.&#x2F;</strong> 代表当前目录下的文件或者文件夹； <strong>..&#x2F;</strong> 代表当前目录的上一级目录中的文件或者文件夹。可以发现ls -a的话，.和..也会显示；linux中的隐藏文件or隐藏文件夹都以.开头</p>
+<p>单个cd 回到主目录</p>
+<table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">pwd</td>
+<td align="center">显示当前工作目录的<strong>绝对路径</strong> ; pwd -P显示实际物理路径</td>
+</tr>
+<tr>
+<td align="center">ls</td>
+<td align="center"><strong>ls:列出目录内容</strong>    ls -a(all):全部的文件，连同隐藏档（以.开头）一起列出来   ls -l 长数据串列出，包含文件的属性与权限等等数据；(常用)等价于”ll”  ；也可以并一起写ls -al</td>
+</tr>
+<tr>
+<td align="center">mkdir</td>
+<td align="center"><strong>创建文件夹</strong>；<em><strong>mkdir -p</strong></em><em>最常用</em>**,若没父目录，直接也给创建了              如mkdir -p &#x2F;g&#x2F;h&#x2F;i</td>
+</tr>
+<tr>
+<td align="center">rmdir</td>
+<td align="center"><strong>删除文件夹</strong>;rmdir -p 删除指定的空目录，及其内的子空目录：</td>
+</tr>
+<tr>
+<td align="center">touch</td>
+<td align="center"><strong>创建空文件</strong>:touch + 文件名称   ;<strong>注意</strong>:vim也可以创建一个空文件，不过得保存才行，不然就没有，这是和touch的一个区别</td>
+</tr>
+<tr>
+<td align="center">cp</td>
+<td align="center"><strong>复制文件或目录</strong>；cp [选项] source(源文件) dest(目的地);  <strong>cp - r</strong>:(recusive 递归地)：使用-r选项，cp指令会递归地复制目录及其内容，包括子目录和文件。</td>
+</tr>
+<tr>
+<td align="center">rm</td>
+<td align="center"><strong>递归删除目录中所有内容</strong>；rm [选项] deleteFile；**-f**:强制执行删除 ； <strong>-r</strong>:递归删除目录中所有内容； <strong>-v</strong>  ;  <strong>rm-rf</strong>很强大,rm -rf &#x2F;* 删库跑路</td>
+</tr>
+<tr>
+<td align="center">mv</td>
+<td align="center">mv oldNameFile newNameFile（功能描述:<strong>重命名</strong>）; mv &#x2F;temp&#x2F;movefile&#x2F;targetFolder(功能描述:<strong>移动文件</strong>)</td>
+</tr>
+<tr>
+<td align="center">cat</td>
+<td align="center">查看文件内容; cat</td>
+</tr>
+<tr>
+<td align="center">more</td>
+<td align="center">more [选项] 要查看的文件。more命令和cat的功能一样都是查看文件里的内容，但有所不同的是more可以<strong>按页来查看文件的内容，还支持直接跳转行等功能。</strong></td>
+</tr>
+<tr>
+<td align="center">less</td>
+<td align="center">less [参数]  文件 ；less 与 more 类似，<strong>但使用 less 可以随意浏览文件，而且 less 在查看之前不会加载整个文件</strong>。显示方面，显示内容方式不是输出到窗口，而是类似vi打开的文件一样，退出按q。</td>
+</tr>
+<tr>
+<td align="center">echo</td>
+<td align="center"><strong>输出内容到控制台</strong>‘’;echo [选项] [输出内容] ;   -e：支持反斜线控制的字符转换</td>
+</tr>
+<tr>
+<td align="center">&gt;和&gt;&gt;</td>
+<td align="center"><strong>&gt; 输出重定向</strong>** 和 &gt;&gt;<strong>追加</strong> ； 如<strong>ls -l &gt; 文件</strong>(功能描述:列表的内容写入a.txt中(覆盖写)) ；如 <strong>echo “hello linux” &gt;&gt; test.c</strong>：把hello linux追加到test.c后面；</td>
+</tr>
+<tr>
+<td align="center">head</td>
+<td align="center">head [OPTIONS] FILES ;(功能描述:<strong>输出文本前面部分</strong>)</td>
+</tr>
+<tr>
+<td align="center">tail</td>
+<td align="center">tail [OPTIONS] FILES；(功能描述:<strong>输出文本后面部分</strong>(默认查看文件尾部后10行));  tail -n 5 fileName (查看文件尾部5行) ;  <strong>tail -f fileName</strong>(功能描述:<strong>实时追踪该文档的所有更新</strong>)   注意:如果用vim加的化，得用<strong>tail -F</strong></td>
+</tr>
+<tr>
+<td align="center">ln</td>
+<td align="center"><strong>软链接</strong>  ln -s [原文件或目录] [软链接名] (功能描述:给原文件创建一个软链接)  创建后可通过ls -l可以查看详细信息; <strong>删除软链接: rm -rf软链接名,而不是rm -rf 软链接名&#x2F;，如果使用rm -rf 软链接名&#x2F; ,会把软链接对应的真实目录下内容删掉</strong>  ;<strong>重要</strong>： <a href="https://blog.csdn.net/weixin_44895651/article/details/105289038?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170442121416800182782629%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=170442121416800182782629&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-6-105289038-null-null.142%5Ev99%5Epc_search_result_base1&utm_term=linux%E8%BD%AF%E9%93%BE%E6%8E%A5&spm=1018.2226.3001.4187">硬链接和软链接的区别</a>  ;<em><strong>实际应用基本都是软链接</strong></em></td>
+</tr>
+<tr>
+<td align="center">history</td>
+<td align="center"><strong>查看历史命令</strong></td>
+</tr>
+</tbody></table>
+<h3 id="时间日期类👈"><a href="#时间日期类👈" class="headerlink" title="时间日期类👈"></a>时间日期类👈</h3><p>基本语法：date [OPTION]…[+FORMAT]</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d&lt;时间字符串&gt;</td>
+<td>显示指定的”时间字符串”表示的时间,而非当前时间</td>
+</tr>
+<tr>
+<td>-s&lt;日期时间&gt;</td>
+<td>设置系统日期时间</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>具体用法见:<a href="https://blog.csdn.net/weixin_43901998/article/details/126634560?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170442499616800227422988%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170442499616800227422988&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-126634560-null-null.142%5Ev99%5Epc_search_result_base1&utm_term=linux%20date&spm=1018.2226.3001.4187">date各种用法</a></p>
+<p> 还有cal 日历类等等</p>
+<h3 id="用户管理类👈"><a href="#用户管理类👈" class="headerlink" title="用户管理类👈"></a>用户管理类👈</h3><h4 id="用户🧍‍♂️"><a href="#用户🧍‍♂️" class="headerlink" title="用户🧍‍♂️"></a>用户🧍‍♂️</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">useradd</td>
+<td align="center">useradd 用户名:<strong>添加新用户</strong>; useradd + g 组名 用户名：<strong>添加新用户到某个组</strong></td>
+</tr>
+<tr>
+<td align="center">cat &#x2F;ect&#x2F;passwd</td>
+<td align="center"><strong>查看创建了哪些用户</strong>，文档中很多没见过的用户都是系统单独创建出来运行系统服务的，不需要改。<img src="/img/linux/11.png">以contigo为例 第一个1001是uid，第二个1001是gid，&#x2F;home&#x2F;contigo是家目录,&#x2F;bin&#x2F;sh指此用户与系统交互的进程</td>
+</tr>
+<tr>
+<td align="center">su</td>
+<td align="center"><strong>切换用户</strong>（switch user）；su 用户名称(切换用户，只能获得用户的执行权限，不能获得环境变量) su - 用户名称(切换到用户并获得该用户的环境变量及执行权限)</td>
+</tr>
+<tr>
+<td align="center">who am i&#x2F;whoami</td>
+<td align="center">前者是显示<strong>最原始的进来时的用户</strong>，后者是<strong>当前用户</strong></td>
+</tr>
+<tr>
+<td align="center">sudo</td>
+<td align="center"><strong>设置用户具有root权限</strong> ; 修改配置文件 vim &#x2F;ect&#x2F;sudoers 在root下添加需要添加的用户和对应的权限</td>
+</tr>
+<tr>
+<td align="center">userdel</td>
+<td align="center"><strong>删除用户</strong> ，但是不会删除文件夹，<strong>只是删除用户</strong> ；  userdel -r david 会把用户<strong>连同目录文件</strong>一起删</td>
+</tr>
+<tr>
+<td align="center">id</td>
+<td align="center">id + 用户名称： <strong>查看用户信息</strong></td>
+</tr>
+</tbody></table>
+<h4 id="用户组🧍‍♂️"><a href="#用户组🧍‍♂️" class="headerlink" title="用户组🧍‍♂️"></a>用户组🧍‍♂️</h4><p>linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建</p>
+<p>所有用户组的信息都在 <strong>&#x2F;ect&#x2F;group</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">groupadd</td>
+<td align="center">groupadd + 组名 <strong>新增用户组</strong></td>
+</tr>
+<tr>
+<td align="center">usermod -g</td>
+<td align="center">usermod -g 用户组 用户名 <strong>修改用户</strong></td>
+</tr>
+<tr>
+<td align="center">groupmod - n</td>
+<td align="center">groupmod -n newName oldName : <strong>给用户组改名</strong></td>
+</tr>
+<tr>
+<td align="center">groupdel</td>
+<td align="center">groupdel + 组名 : <strong>删除用户组</strong></td>
+</tr>
+</tbody></table>
+<h3 id="文件权限类👈"><a href="#文件权限类👈" class="headerlink" title="文件权限类👈"></a>文件权限类👈</h3><h4 id="文件属性和权限📒"><a href="#文件属性和权限📒" class="headerlink" title="文件属性和权限📒"></a>文件属性和权限📒</h4><p>有了很多用户组，想要区别他们，就得给不同的用户组不同的操作权限。</p>
+<p>在linux中ll &#x2F; ls -l 可以显示一个文件的属性及其文件所属的用户和组</p>
+<p><img src="/img/linux/12.png"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png" alt="363003_1227493859FdXT"></p>
+<p>当为 <strong>d</strong> 则是目录</p>
+<p>当为 <strong>-</strong> 则是文件；</p>
+<p>若是 <strong>l</strong> 则表示为链接文档(link file)；</p>
+<p>若是 <strong>b</strong> 则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；</p>
+<p>若是 <strong>c</strong> 则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</p>
+<p>从左至右用 <strong>0-9</strong> 这些数字来表示。</p>
+<p>第 <strong>0</strong> 位确定文件类型，第 <strong>1-3</strong> 位确定属主（该文件的所有者 即user）拥有该文件的权限。</p>
+<p>第4-6位确定属组（所有者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限。</p>
+<p>其中，第 <strong>1、4、7</strong> 位表示读权限，如果用 <strong>r</strong> 字符表示，则有读权限，如果用 <strong>-</strong> 字符表示，则没有读权限；</p>
+<p>第 <strong>2、5、8</strong> 位表示写权限，如果用 <strong>w</strong> 字符表示，则有写权限，如果用 <strong>-</strong> 字符表示没有写权限；第 <strong>3、6、9</strong> 位表示可执行权限，如果用 <strong>x</strong> 字符表示，则有执行权限，如果用 <strong>-</strong> 字符表示，则没有执行权限。</p>
+<p><em><strong>注意</strong></em>:删除文件一个文件需要的不是对该文件是否有写权限，而是对<strong>该文件所在的目录</strong>有写权限）</p>
+<h4 id="更改文件权限📒"><a href="#更改文件权限📒" class="headerlink" title="更改文件权限📒"></a>更改文件权限📒</h4><p><img src="/img/linux/13.png" alt="img"></p>
+<h5 id="chmod-改变权限-📃"><a href="#chmod-改变权限-📃" class="headerlink" title="chmod 改变权限:📃"></a><strong>chmod 改变权限</strong>:📃</h5><p><strong>第一种方式</strong>变更权限 </p>
+<p>chmod [{ugoa} {+-&#x3D;} {rwx}] 文件或目录</p>
+<p>例 chmod u+x fileName，让属主添加能执行该文件的权限</p>
+<p>​	chmod a&#x3D;rw fileName 让文件的ugo权限都可读可写</p>
+<p><strong>第二种方式</strong>变更权限（<strong>更直接 更简单</strong>)</p>
+<p>chmod [mode&#x3D;421] [文件或目录]</p>
+<p><strong>技巧</strong> </p>
+<p>u:所有者 g：所有组 o:其他人 a:所有人(u、g、o的总和)</p>
+<p><strong>r&#x3D;4 w&#x3D;2 x&#x3D;1 rwx&#x3D;4+2+1&#x3D;7</strong> (用图中的二进制去理解)，如 <strong>chmod 777 file</strong></p>
+<p>菜鸟教程有<a href="https://www.runoob.com/linux/linux-comm-chmod.html">更细的</a></p>
+<p>修改整个文件夹里面的所有文件的所有者、所属组、其他用户都具有可度可写可执行权限。</p>
+<p><strong>chmod -R 777 xiyou&#x2F;</strong></p>
+<h5 id="chown-改变所有者📃"><a href="#chown-改变所有者📃" class="headerlink" title="chown 改变所有者📃"></a>chown 改变所有者📃</h5><p><strong>chown [选项] [最终用户] [文件或目录]</strong> (功能描述: <strong>改变文件或者目录的所有者</strong>)</p>
+<p>chown -R:递归操作</p>
+<h5 id="chgrp-改变所有组📃"><a href="#chgrp-改变所有组📃" class="headerlink" title="chgrp 改变所有组📃"></a>chgrp 改变所有组📃</h5><h3 id="搜索查找类👈"><a href="#搜索查找类👈" class="headerlink" title="搜索查找类👈"></a>搜索查找类👈</h3><h4 id="find📓"><a href="#find📓" class="headerlink" title="find📓"></a>find📓</h4><p><strong>find [搜索范围] [选项]</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-name&lt;查找方式&gt;</td>
+<td align="center">按照指定的文件名查找模式查找文件</td>
+</tr>
+<tr>
+<td align="center">-user&lt;用户名&gt;</td>
+<td align="center">查找属于指定用户名所有文件</td>
+</tr>
+<tr>
+<td align="center">-size&lt;文件大小&gt;</td>
+<td align="center">按照指定的文件大小查找文件,单位为:b 一 块 c 一 字节，w 一 字（2字节）,k 一 千字节,M 一 兆字节 ， G 一 吉字节</td>
+</tr>
+</tbody></table>
+<h4 id="locate📓"><a href="#locate📓" class="headerlink" title="locate📓"></a>locate📓</h4><h4 id="grep📓"><a href="#grep📓" class="headerlink" title="grep📓"></a>grep📓</h4><p><strong>管道符,“ | ”</strong>,表示将前一个命令的处理结果输出传递给后面的命令处理</p>
+<p><strong>grep 选项 查找内容 源文件</strong>(在源文件中查找内容)</p>
+<p>-n 显示匹配</p>
+<p>与管道符经常一起用,如ls | grep .c ，查找后缀为.c的文件</p>
+<p>补充 : <strong>wc</strong>命令</p>
+<p> <strong>显示 行数,单词数量，字节数， 文件名</strong></p>
+<h3 id="压缩解压类👈"><a href="#压缩解压类👈" class="headerlink" title="压缩解压类👈"></a>压缩解压类👈</h3><h4 id="gzip-gunzip-压缩📔"><a href="#gzip-gunzip-压缩📔" class="headerlink" title="gzip&#x2F;gunzip 压缩📔"></a>gzip&#x2F;gunzip 压缩📔</h4><p><strong>gzip 文件</strong> (压缩文件，只能将文件压缩为*.gz文件)</p>
+<p><strong>gunzip 文件.gz</strong>（解压缩文件命令）</p>
+<p><strong>技巧</strong></p>
+<p>(1)只能压缩文件不能压缩目录</p>
+<p>(2)不保留原来的文件</p>
+<p>(3)同时多个文件会产生多个压缩包</p>
+<h4 id="zip-unzip压缩📔"><a href="#zip-unzip压缩📔" class="headerlink" title="zip&#x2F;unzip压缩📔"></a>zip&#x2F;unzip压缩📔</h4><p> <strong>zip 选项 -r 压缩目录</strong></p>
+<p><strong>unzip 选项 -d 指定解压后文件的存放目录</strong></p>
+<h4 id="tar打包📔"><a href="#tar打包📔" class="headerlink" title="tar打包📔"></a>tar打包📔</h4><p><strong>tar [选项] XXX.tar.gz 将要打包进去的内容</strong> (打包目录，压缩后的文件格式.tar.gz)</p>
+<p>tar -zcvf 打包</p>
+<p>tar -zxvf解包</p>
+<p><strong>选项</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-c</td>
+<td>产生.tar打包文件</td>
+</tr>
+<tr>
+<td align="center">-v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td>指定压缩后的文件名</td>
+</tr>
+<tr>
+<td align="center">-z</td>
+<td>打包同时压缩</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td>解包.tar文件</td>
+</tr>
+<tr>
+<td align="center">-C</td>
+<td>解压到指定目录</td>
+</tr>
+</tbody></table>
+<h3 id="磁盘分区类👈"><a href="#磁盘分区类👈" class="headerlink" title="磁盘分区类👈"></a>磁盘分区类👈</h3><h4 id="du-查看文件和目录占用的磁盘空间🎇"><a href="#du-查看文件和目录占用的磁盘空间🎇" class="headerlink" title="du 查看文件和目录占用的磁盘空间🎇"></a>du 查看文件和目录占用的磁盘空间🎇</h4><p>du:即disk usage 磁盘占用情况</p>
+<p><strong>du 目录&#x2F;文件</strong> (显示目录下每个子目录的磁盘使用情况)</p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-h</td>
+<td align="center">以人们较易阅读的GBytes,MBytes,KBytes等格式自行显示；</td>
+</tr>
+<tr>
+<td align="center">-a</td>
+<td align="center">不仅查看子目录大小，还要包括文件</td>
+</tr>
+<tr>
+<td align="center">-c</td>
+<td align="center">显示所有的文件和子目录大小后，显示总和</td>
+</tr>
+<tr>
+<td align="center">-s</td>
+<td align="center">只显示总和</td>
+</tr>
+<tr>
+<td align="center">–max-depth&#x3D;n</td>
+<td align="center">指定统计子目录的深度为第n层</td>
+</tr>
+</tbody></table>
+<h4 id="df-查看磁盘空间使用情况🎇"><a href="#df-查看磁盘空间使用情况🎇" class="headerlink" title="df 查看磁盘空间使用情况🎇"></a>df 查看磁盘空间使用情况🎇</h4><p>df：disk free 空余磁盘</p>
+<p><strong>df 选项</strong> (列出文件系统的整体磁盘使用量，检查文件系统的磁盘占用情况)</p>
+<p>df -h 以人们较易阅读的GBytes,MBytes,KbYTES等格式自行显示</p>
+<p><em>了解一些特殊的文件目录可以去查一些资料</em></p>
+<h4 id="lsblk-查看设备挂载情况🎇"><a href="#lsblk-查看设备挂载情况🎇" class="headerlink" title="lsblk 查看设备挂载情况🎇"></a>lsblk 查看设备挂载情况🎇</h4><h3 id="进程管理类👈"><a href="#进程管理类👈" class="headerlink" title="进程管理类👈"></a>进程管理类👈</h3><h4 id="ps-查看当前系统进程状态🕹"><a href="#ps-查看当前系统进程状态🕹" class="headerlink" title="ps 查看当前系统进程状态🕹"></a>ps 查看当前系统进程状态🕹</h4><p>ps:process status 进程状态 </p>
+<p><strong>ps aux | grep xxx</strong> (<strong>查看系统中所有进程</strong>)  （官方文档不推荐这种写法）</p>
+<p><strong>ps -ef | grep xxx</strong> (<strong>可以查看子父进程之间的关系</strong>)</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>列出带有终端的所有用户的进程</td>
+</tr>
+<tr>
+<td>x</td>
+<td>列出当前用户的所有进程，包括没有终端的进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>面向用户友好的显示风格</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>列出所有进程</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>列出某个用户关联的所有进程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>显示完整格式的进程列表</td>
+</tr>
+</tbody></table>
+<h3 id="软件包管理👈"><a href="#软件包管理👈" class="headerlink" title="软件包管理👈"></a>软件包管理👈</h3><h4 id="RPM🧥"><a href="#RPM🧥" class="headerlink" title="RPM🧥"></a>RPM🧥</h4><p>概述</p>
+<p>rpm（英文全拼：redhat package manager） 原本是 Red Hat Linux 发行版专门用来管理 Linux 各项套件的程序，由于它遵循 GPL 规则且功能强大方便，因而广受欢迎。逐渐受到其他发行版的采用。RPM 套件管理方式的出现，让 Linux 易于安装，升级，间接提升了 Linux 的适用度。</p>
+<p>RPM查询命令</p>
+<h3 id="克隆虚拟机👈"><a href="#克隆虚拟机👈" class="headerlink" title="克隆虚拟机👈"></a>克隆虚拟机👈</h3><p><a href="https://blog.csdn.net/awd15771131554/article/details/123778655?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170461476216800188535311%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170461476216800188535311&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-123778655-null-null.142%5Ev99%5Epc_search_result_base1&utm_term=%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%8B%E9%9A%86&spm=1018.2226.3001.4187">链接</a></p>
+<h3 id="Shell编程🥽"><a href="#Shell编程🥽" class="headerlink" title="Shell编程🥽"></a>Shell编程🥽</h3><p>见菜鸟教程<a href="https://www.runoob.com/linux/linux-shell.html">https://www.runoob.com/linux/linux-shell.html</a></p>
+<h4 id="概述🖋"><a href="#概述🖋" class="headerlink" title="概述🖋"></a>概述🖋</h4><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
+<p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
+<p>Ken Thompson 的 sh 是第一种 Unix Shell，Windows Explorer 是一个典型的图形界面 Shell。</p>
+<h4 id="变量🖋"><a href="#变量🖋" class="headerlink" title="变量🖋"></a>变量🖋</h4><h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p><img src="/../img/linux/13.webp"></p>
+]]></content>
       <categories>
         <category>自用</category>
       </categories>
