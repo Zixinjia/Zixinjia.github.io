@@ -1188,4 +1188,26 @@
         <tag>算法(刷题向)</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode补题</title>
+    <url>/2024/02/10/leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode周赛补题"><a href="#Leetcode周赛补题" class="headerlink" title="Leetcode周赛补题"></a>Leetcode周赛补题</h1><h2 id="双周赛84"><a href="#双周赛84" class="headerlink" title="双周赛84"></a><strong>双周赛84</strong></h2><p><a href="https://leetcode.cn/contest/biweekly-contest-84/">https://leetcode.cn/contest/biweekly-contest-84/</a></p>
+<p><a href="https://leetcode.cn/problems/minimum-replacements-to-sort-the-array/description/">https://leetcode.cn/problems/minimum-replacements-to-sort-the-array/description/</a> 抽屉原理</p>
+<h2 id="周赛302"><a href="#周赛302" class="headerlink" title="周赛302"></a>周赛302</h2><p><a href="https://leetcode.cn/problems/query-kth-smallest-trimmed-number/description/">https://leetcode.cn/problems/query-kth-smallest-trimmed-number/description/</a></p>
+<p><a href="https://leetcode.cn/problems/query-kth-smallest-trimmed-number/description/">https://leetcode.cn/problems/query-kth-smallest-trimmed-number/description/</a> 暴力</p>
+<h2 id="周赛376"><a href="#周赛376" class="headerlink" title="周赛376"></a>周赛376</h2><p><a href="https://leetcode.cn/contest/weekly-contest-376/">https://leetcode.cn/contest/weekly-contest-376/</a> </p>
+<p>证明中位数贪心 x取何值是到各个点距离最小，比如a0,a1,a2 ….an-1</p>
+<p>当x&lt;a0s时，观察法可发现随x增大 各个点到x距离在减小，当x&gt;&#x3D;a0 &amp;&amp; x&lt;&#x3D;an-1时，若x&#x3D;a0 -&gt; a1,a0到x距离增大1，an-1减小1（a0和an-1一加一减不变），a2-an-2到x距离减小，再从a2-&gt;a3，变成子问题，最后发现x是中位数是无法减小，继续移动将使总距离变大</p>
+<p><a href="https://www.bilibili.com/video/BV1994y1A7oo/?spm_id_from=333.880.my_history.page.click&vd_source=4452cbcad134fb17ec9cfb03a0acbdac">https://www.bilibili.com/video/BV1994y1A7oo/?spm_id_from=333.880.my_history.page.click&amp;vd_source=4452cbcad134fb17ec9cfb03a0acbdac</a> 讲解得很好</p>
+<p><a href="https://leetcode.cn/problems/minimum-cost-to-make-array-equalindromic/solutions/2569308/yu-chu-li-hui-wen-shu-zhong-wei-shu-tan-7j0zy/">https://leetcode.cn/problems/minimum-cost-to-make-array-equalindromic/solutions/2569308/yu-chu-li-hui-wen-shu-zhong-wei-shu-tan-7j0zy/</a> 中位数贪心题单 </p>
+<p><a href="https://leetcode.cn/problems/apply-operations-to-maximize-frequency-score/description/">https://leetcode.cn/problems/apply-operations-to-maximize-frequency-score/description/</a></p>
+<p> 中位数贪心 hard题 因为限定次数，所以肯定修改的是连续子数组</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+      </categories>
+      <tags>
+        <tag>算法(刷题向)</tag>
+      </tags>
+  </entry>
 </search>
