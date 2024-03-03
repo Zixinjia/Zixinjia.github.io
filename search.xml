@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024寒假计划</title>
-    <url>/2024/01/05/2024%E5%AF%92%E5%81%87/</url>
-    <content><![CDATA[<h1 id="2024寒假计划"><a href="#2024寒假计划" class="headerlink" title="2024寒假计划"></a>2024寒假计划</h1><p><strong>毫无章法，卷就完了</strong></p>
+    <title></title>
+    <url>/2024/02/28/CF%E6%9D%BF%E5%88%B7/</url>
+    <content><![CDATA[<p>1200 板刷20题</p>
+<p>1.<a href="https://www.luogu.com.cn/problem/CF466A">https://www.luogu.com.cn/problem/CF466A</a> 模拟</p>
+<p>2.<a href="https://www.luogu.com.cn/problem/CF1352C">https://www.luogu.com.cn/problem/CF1352C</a> （推公式题）第k个不能整除n数</p>
+<p>3.<a href="https://www.luogu.com.cn/problem/CF489B">https://www.luogu.com.cn/problem/CF489B</a> 哈希</p>
+<p>4、<a href="https://www.luogu.com.cn/problem/CF514A">https://www.luogu.com.cn/problem/CF514A</a> 模拟，注意前导0</p>
+<p>5.<a href="https://www.luogu.com.cn/problem/CF474B">https://www.luogu.com.cn/problem/CF474B</a> 二分</p>
+<p>6.<a href="https://www.luogu.com.cn/problem/solution/CF1520D">https://www.luogu.com.cn/problem/solution/CF1520D</a> map桶统计</p>
+<p>7.<a href="https://codeforces.com/problemset/problem/327/A">https://codeforces.com/problemset/problem/327/A</a> 注意数据范围，可以暴力就可以考虑</p>
+<p>8.<a href="https://www.luogu.com.cn/problem/CF1343C">https://www.luogu.com.cn/problem/CF1343C</a> 这题太好，把每块相同符号的最大值选出来，遇到不同符号的加上之前迭代得到的max，题解也有用dp（最长上升子序列模型）的</p>
+<p>9.<a href="https://codeforces.com/problemset/problem/433/B">https://codeforces.com/problemset/problem/433/B</a></p>
+<p>感觉差不多了，刷1300</p>
+<p>1300 板刷30题</p>
+<p>1.<a href="https://www.luogu.com.cn/problem/CF4C">https://www.luogu.com.cn/problem/CF4C</a> stl map最基本使用</p>
+<p>2.<a href="https://www.luogu.com.cn/problem/CF230B">https://www.luogu.com.cn/problem/CF230B</a> 要判断一下这个数的平方根是否为质数就OK了(我原来直接判断这个数是不是质数，但是完全多余，会超时，)</p>
+<p><a href="https://www.luogu.com.cn/problem/CF189A">https://www.luogu.com.cn/problem/CF189A</a> 完全背包，没看懂</p>
+<p>1400 板刷50题</p>
 ]]></content>
-      <categories>
-        <category>规划</category>
-      </categories>
-      <tags>
-        <tag>假期</tag>
-      </tags>
   </entry>
   <entry>
     <title>linux(持续更新)</title>
@@ -725,6 +734,18 @@
       </tags>
   </entry>
   <entry>
+    <title>2024寒假计划</title>
+    <url>/2024/01/05/2024%E5%AF%92%E5%81%87/</url>
+    <content><![CDATA[<h1 id="2024寒假计划"><a href="#2024寒假计划" class="headerlink" title="2024寒假计划"></a>2024寒假计划</h1><p><strong>毫无章法，卷就完了</strong></p>
+]]></content>
+      <categories>
+        <category>规划</category>
+      </categories>
+      <tags>
+        <tag>假期</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自用算法笔记(持续更新)</title>
     <url>/2023/12/26/%E8%87%AA%E7%94%A8%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h1><h2 id="1-第一章-基础算法"><a href="#1-第一章-基础算法" class="headerlink" title="1.第一章 基础算法"></a>1.第一章 基础算法</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>重视思想 </p>
@@ -1215,26 +1236,5 @@
       <tags>
         <tag>算法(刷题向)</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/02/28/CF%E6%9D%BF%E5%88%B7/</url>
-    <content><![CDATA[<p>1200 板刷20题</p>
-<p>1.<a href="https://www.luogu.com.cn/problem/CF466A">https://www.luogu.com.cn/problem/CF466A</a> 模拟</p>
-<p>2.<a href="https://www.luogu.com.cn/problem/CF1352C">https://www.luogu.com.cn/problem/CF1352C</a> （推公式题）第k个不能整除n数</p>
-<p>3.<a href="https://www.luogu.com.cn/problem/CF489B">https://www.luogu.com.cn/problem/CF489B</a> 哈希</p>
-<p>4、<a href="https://www.luogu.com.cn/problem/CF514A">https://www.luogu.com.cn/problem/CF514A</a> 模拟，注意前导0</p>
-<p>5.<a href="https://www.luogu.com.cn/problem/CF474B">https://www.luogu.com.cn/problem/CF474B</a> 二分</p>
-<p>6.<a href="https://www.luogu.com.cn/problem/solution/CF1520D">https://www.luogu.com.cn/problem/solution/CF1520D</a> map桶统计</p>
-<p>7.<a href="https://codeforces.com/problemset/problem/327/A">https://codeforces.com/problemset/problem/327/A</a> 注意数据范围，可以暴力就可以考虑</p>
-<p>8.<a href="https://www.luogu.com.cn/problem/CF1343C">https://www.luogu.com.cn/problem/CF1343C</a> 这题太好，把每块相同符号的最大值选出来，遇到不同符号的加上之前迭代得到的max，题解也有用dp（最长上升子序列模型）的</p>
-<p>9.<a href="https://codeforces.com/problemset/problem/433/B">https://codeforces.com/problemset/problem/433/B</a></p>
-<p>感觉差不多了，刷1300</p>
-<p>1300 板刷30题</p>
-<p>1.<a href="https://www.luogu.com.cn/problem/CF4C">https://www.luogu.com.cn/problem/CF4C</a> stl map最基本使用</p>
-<p>2.<a href="https://www.luogu.com.cn/problem/CF230B">https://www.luogu.com.cn/problem/CF230B</a> 要判断一下这个数的平方根是否为质数就OK了(我原来直接判断这个数是不是质数，但是完全多余，会超时，)</p>
-<p><a href="https://www.luogu.com.cn/problem/CF189A">https://www.luogu.com.cn/problem/CF189A</a> 完全背包，没看懂</p>
-<p>1400 板刷50题</p>
-]]></content>
   </entry>
 </search>
