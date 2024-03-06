@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Codeforces Round | 西贝の小窝</title><meta name="author" content="contito"><meta name="copyright" content="contito"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Codeforces Round #827 (Div. 4) A - GA. Sum题意： 是否能凑出a+b=c 分析： 可以升序排序，看前两个之和是否等于第三个数，我是直接枚举哪个是最大值。 代码： #include<bits/stdc++.h>using namespace std;int t;int main(){    cin >> t;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round">
+<meta property="og:url" content="http://jiazixin.xyz/2024/03/06/Codeforces%20Round%20#827%20(Div.%204)%20A%20-%20G/index.html">
+<meta property="og:site_name" content="西贝の小窝">
+<meta property="og:description" content="Codeforces Round #827 (Div. 4) A - GA. Sum题意： 是否能凑出a+b=c 分析： 可以升序排序，看前两个之和是否等于第三个数，我是直接枚举哪个是最大值。 代码： #include<bits/stdc++.h>using namespace std;int t;int main(){    cin >> t;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jiazixin.xyz/img/%E5%A3%81%E7%BA%B8/code.png">
+<meta property="article:published_time" content="2024-03-06T13:55:44.004Z">
+<meta property="article:modified_time" content="2024-03-06T13:58:32.802Z">
+<meta property="article:author" content="contito">
+<meta property="article:tag" content="算法(刷题向)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jiazixin.xyz/img/%E5%A3%81%E7%BA%B8/code.png"><link rel="shortcut icon" href="/img/%E5%B0%8F%E7%8B%97.jpg"><link rel="canonical" href="http://jiazixin.xyz/2024/03/06/Codeforces%20Round%20#827%20(Div.%204)%20A%20-%20G/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Codeforces Round',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-06 21:58:32'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/copyright.css"><link rel="stylesheet" href="/css/daohang.css?1"><link rel="stylesheet" href="/css/zidingyi.css?1"><link rel="stylesheet" href="/css/cursor.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/footer.css"><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@master/mainColor/heoMainColor.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/tag-link/tag-link.css"><script src="/live2d-widget/autoload.js"></script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/%E5%B0%8F%E7%8B%97.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E5%A3%81%E7%BA%B8/code.png')"><nav id="nav"><span id="blog-info"><a href="/" title="西贝の小窝"><span class="site-name">西贝の小窝</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Codeforces Round</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-06T13:55:44.004Z" title="发表于 2024-03-06 21:55:44">2024-03-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-06T13:58:32.802Z" title="更新于 2024-03-06 21:58:32">2024-03-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%87%AA%E7%94%A8/">自用</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|&nbsp; <span class="post-meta-dianzan"><a class="dianzan" href="javascript:void(0)" onclick="dianzan()"><i class="fas fa-thumbs-up"></i></a><span class="post-meta-label"> 点赞:</span><span class="dianzan-count">0</span></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('/img/%E5%A3%81%E7%BA%B8/code.png');"></div><article class="post-content" id="article-container"><h1 id="Codeforces-Round-827-Div-4-A-G"><a href="#Codeforces-Round-827-Div-4-A-G" class="headerlink" title="Codeforces Round #827 (Div. 4) A - G"></a>Codeforces Round #827 (Div. 4) A - G</h1><h3 id="A-Sum"><a href="#A-Sum" class="headerlink" title="A. Sum"></a>A. Sum</h3><p><strong>题意：</strong></p>
+<p>是否能凑出a+b=c</p>
+<p><strong>分析：</strong></p>
+<p>可以升序排序，看前两个之和是否等于第三个数，我是直接枚举哪个是最大值。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t --){</span><br><span class="line">        <span class="type">int</span> a,b,c;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        <span class="type">int</span> mmax = <span class="built_in">max</span>({a,b,c});</span><br><span class="line">        <span class="keyword">if</span>(a==mmax){</span><br><span class="line">            <span class="keyword">if</span>(b + c == a)cout &lt;&lt; <span class="string">"YES"</span> &lt;&lt;endl;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">"NO"</span> &lt;&lt;endl;</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(b == mmax){</span><br><span class="line">            <span class="keyword">if</span>(a + c == b)cout &lt;&lt; <span class="string">"YES"</span> &lt;&lt;endl;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt;<span class="string">"NO"</span>&lt;&lt;endl;</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(c == mmax){</span><br><span class="line">            <span class="keyword">if</span>(a + b == c)cout &lt;&lt; <span class="string">"YES"</span>&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">"NO"</span>&lt;&lt;endl;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="B-Increasing"><a href="#B-Increasing" class="headerlink" title="B. Increasing"></a>B. Increasing</h3><p><strong>题意：</strong></p>
+<p>排序之后 a1 &lt; a2 &lt;⋯&lt; an是否成立</p>
+<p><strong>分析：</strong></p>
+<p>直接排序，看有无相邻值相等即可</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">110</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t --){</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++){</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">sort</span>(a, a + n);</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i ++){</span><br><span class="line">            <span class="keyword">if</span>(a[i] == a[i - <span class="number">1</span>]){</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(flag==<span class="number">1</span>){</span><br><span class="line">            cout &lt;&lt; <span class="string">"NO"</span> &lt;&lt; endl;</span><br><span class="line">        }<span class="keyword">else</span> cout &lt;&lt; <span class="string">"YES"</span> &lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="C-Stripes"><a href="#C-Stripes" class="headerlink" title="C. Stripes"></a>C. Stripes</h3><p><strong>题意：</strong></p>
+<p>蓝色涂列，红色涂行，看哪个是最后涂的</p>
+<p><strong>分析：</strong></p>
+<p>如果存在一行都是R，那么一定R是最后涂的，反证：假如R不是最后涂的，那么B必然有一格覆盖R成B</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t --){</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">0</span>;</span><br><span class="line">        string s;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">8</span>; i ++){</span><br><span class="line">            cin &gt;&gt; s;</span><br><span class="line">        <span class="comment">//count查看s中R的出现次数，新学到的一种统计方式(</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">count</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>(),<span class="string">'R'</span>)== <span class="number">8</span>){</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(flag){</span><br><span class="line">            cout&lt;&lt;<span class="string">"R"</span>&lt;&lt;endl;</span><br><span class="line">        }<span class="keyword">else</span> cout &lt;&lt; <span class="string">"B"</span> &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="D-Coprime"><a href="#D-Coprime" class="headerlink" title="D. Coprime"></a>D. Coprime</h3><p><strong>题意：</strong></p>
+<p>是否能找两个数a[i],a[j]  i可以等于j，使得a[i]和a[j]的最大公约数为1且i+j最大</p>
+<p><strong>分析：</strong></p>
+<p>注意n的极限范围2e5，双重循环n^2一定超时，a[i]的数据范围&lt;1000，那么可以初始读a数组时，将每个数的最后下标记录下来，这样避免了重复值造成影响，然后枚举1-1000出现过的数更新下标和</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> T;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">bool</span> prime[<span class="number">1001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T --){</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++){</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">            mp[a[i]] = i;</span><br><span class="line">  		   <span class="comment">//存取下标</span></span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> mmax = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000</span>; i ++){</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i; j &lt;= <span class="number">1000</span>; j ++){</span><br><span class="line">                <span class="keyword">if</span>(mp.<span class="built_in">count</span>(i)&amp;&amp;mp.<span class="built_in">count</span>(j) &amp;&amp; __gcd(i,j)==<span class="number">1</span>)</span><br><span class="line">                    <span class="comment">//更新下标和</span></span><br><span class="line">                    mmax = <span class="built_in">max</span>(mp[i] + mp[j], mmax);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; mmax &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="E-Scuza"><a href="#E-Scuza" class="headerlink" title="E. Scuza"></a>E. Scuza</h3><p>Timur一次最多爬a[j]高的台阶，问一次一次爬能爬多高(极限)</p>
+<p><strong>分析：</strong></p>
+<p>找到不能爬的位置，也就是x &lt; a[i]的时候，考虑一次一次枚举会超，可以二分，</p>
+<p>二分前提要让a[i]有序，所以让a[i] = max(a[i], a[i - 1])使得具有单调性，查找第一个&gt;x的位置 l，最后 l -1 即为最高处，用前缀和预处理直接输出s[l-1]即可</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> s[N];</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t --){</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);</span><br><span class="line">        <span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span> s);</span><br><span class="line">        <span class="type">int</span> n, q;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt;q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++){</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">            s[i] = s[i - <span class="number">1</span>] + a[i];</span><br><span class="line">            <span class="comment">//构造能够二分查找的a序列</span></span><br><span class="line">            a[i] = <span class="built_in">max</span>(a[i <span class="number">-1</span>],a[i]);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">while</span>(q --){</span><br><span class="line">            <span class="type">int</span> x;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> l = <span class="number">0</span>,r = n+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(l &lt; r){</span><br><span class="line">                <span class="comment">//二分查找第一个不能爬到的位置</span></span><br><span class="line">                <span class="type">int</span> mid = l + r &gt;&gt;<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(a[mid] &gt; x)r = mid;</span><br><span class="line">                <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">            }</span><br><span class="line">            cout &lt;&lt; s[r<span class="number">-1</span>] &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="F-Smaller"><a href="#F-Smaller" class="headerlink" title="F.  Smaller"></a>F.  Smaller</h3><p><strong>题意：</strong></p>
+<p>给s,t两个”a”加字符串，每轮加完看看能否让重排s,使其小于t</p>
+<p><strong>分析：</strong></p>
+<p>分类讨论：</p>
+<p>如果t存在一个非a字符，不管s有没有非a的，由于t有a，我们可以重排s的a放在第一位，那么必然满足小于，输出”YES”。</p>
+<p>如果t是纯a字符，s有非a，输出”NO”； s是纯a的串，比较两者的长度，s长则no</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t,n,op,x;</span><br><span class="line">string a;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t --){</span><br><span class="line">        <span class="type">int</span> slen = <span class="number">0</span>, tlen = <span class="number">0</span>,flag1=<span class="number">0</span>,flag2=<span class="number">0</span>;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="keyword">while</span>(n --){</span><br><span class="line">            cin &gt;&gt; op &gt;&gt; x;</span><br><span class="line">            cin &gt;&gt; a;</span><br><span class="line">            <span class="keyword">if</span>(op==<span class="number">1</span>){</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;a.<span class="built_in">size</span>(); i ++){</span><br><span class="line">                    <span class="keyword">if</span>(a[i]!=<span class="string">'a'</span>){</span><br><span class="line">                        flag2 = <span class="number">1</span>;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                slen += x*a.<span class="built_in">size</span>();</span><br><span class="line">            }<span class="keyword">else</span>{</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i ++){</span><br><span class="line">                    <span class="keyword">if</span>(a[i]!=<span class="string">'a'</span>){</span><br><span class="line">                        flag1 = <span class="number">1</span>;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                tlen += x*a.<span class="built_in">size</span>();</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(!flag1&amp;&amp;flag2){</span><br><span class="line">                cout &lt;&lt; <span class="string">"NO"</span> &lt;&lt;endl;</span><br><span class="line">            }<span class="keyword">else</span> <span class="keyword">if</span>(flag1){</span><br><span class="line">                cout &lt;&lt; <span class="string">"YES"</span>&lt;&lt;endl;</span><br><span class="line">            }<span class="keyword">else</span> <span class="keyword">if</span>(slen&lt;tlen)cout &lt;&lt;<span class="string">"YES"</span>&lt;&lt;endl;</span><br><span class="line">             <span class="keyword">else</span> cout &lt;&lt;<span class="string">"NO"</span>&lt;&lt;endl;</span><br><span class="line">    	}</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="G-Orray"><a href="#G-Orray" class="headerlink" title="G. Orray"></a>G. Orray</h3><p><strong>题意：</strong></p>
+<p>给定数组，求排序后的前缀OR最大的一个序列</p>
+<p><strong>分析：</strong></p>
+<p>第一个放最大的，使得后面都尽可能的大，之后放和前一个进行OR后贡献最大的数</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> T;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> st[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T --){</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="built_in">memset</span>(st,<span class="number">0</span>,<span class="keyword">sizeof</span> st);</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span> a);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ;i  &lt;= n; i ++)</span><br><span class="line">            cin &gt;&gt; a[i];        </span><br><span class="line">        <span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//cur为当前放进去的最新的数</span></span><br><span class="line">        <span class="type">int</span> cur = a[n];</span><br><span class="line">        st[n] = <span class="number">1</span>;</span><br><span class="line">        ans.<span class="built_in">push_back</span>(n);</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>){</span><br><span class="line">            <span class="type">int</span> pos=<span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> mmax = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = n <span class="number">-1</span>; i &gt;= <span class="number">1</span>; i --){</span><br><span class="line">                <span class="keyword">if</span>(st[i])<span class="keyword">continue</span>;</span><br><span class="line">                <span class="comment">//枚举给cur最大贡献的数</span></span><br><span class="line">                <span class="keyword">if</span>((a[i] | cur) - cur &gt; mmax){</span><br><span class="line">                    mmax = (a[i] | cur) - cur;</span><br><span class="line">                    pos = i;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(mmax == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">            cur = cur | a[pos];</span><br><span class="line">            ans.<span class="built_in">push_back</span>(pos);</span><br><span class="line">            st[pos] = <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; ans.<span class="built_in">size</span>(); i ++){</span><br><span class="line">            cout &lt;&lt; a[ans[i]] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++){</span><br><span class="line">            <span class="keyword">if</span>(!st[i])cout &lt;&lt; a[i] &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Codeforces Round</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://jiazixin.xyz/2024/03/06/Codeforces%20Round%20#827%20(Div.%204)%20A%20-%20G/">http://jiazixin.xyz/2024/03/06/Codeforces Round #827 (Div. 4) A - G/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a" style="display: inline-block;width: 120px"><h>作者</h><div class="post-copyright-cc-info"><h>contito</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-03-06</h></div></div><div class="post-copyright-u" style="display: inline-block;width: 120px"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-03-06</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY 4.0" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95-%E5%88%B7%E9%A2%98%E5%90%91/">算法(刷题向)</a></div><div class="post_share"><div class="social-share" data-image="/img/%E5%A3%81%E7%BA%B8/code.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/%E5%BE%AE%E4%BF%A1.png" target="_blank"><img class="post-qr-code-img" src="/img/%E5%BE%AE%E4%BF%A1.png" alt="微信"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" target="_blank"><img class="post-qr-code-img" src="/img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/02/Linux/" title="linux(持续更新)"><img class="cover" src="/img/%E5%A3%81%E7%BA%B8/linux.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">linux(持续更新)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/26/%E8%87%AA%E7%94%A8%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="自用算法笔记(持续更新)"><img class="cover" src="/img/%E5%A3%81%E7%BA%B8/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A01.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-26</div><div class="title">自用算法笔记(持续更新)</div></div></a></div></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/%E5%B0%8F%E7%8B%97.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">contito</div><div class="author-info__description">看到我请让我滚去学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">&lt;更新时间:1.10&gt;1.11开始日更</div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fas fa-calendar"></i><span>文章日历</span></div><div class="widget" id="calendar"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Codeforces-Round-827-Div-4-A-G"><span class="toc-number">1.</span> <span class="toc-text">Codeforces Round #827 (Div. 4) A - G</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Sum"><span class="toc-number">1.0.1.</span> <span class="toc-text">A. Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Increasing"><span class="toc-number">1.0.2.</span> <span class="toc-text">B. Increasing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-Stripes"><span class="toc-number">1.0.3.</span> <span class="toc-text">C. Stripes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-Coprime"><span class="toc-number">1.0.4.</span> <span class="toc-text">D. Coprime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-Scuza"><span class="toc-number">1.0.5.</span> <span class="toc-text">E. Scuza</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-Smaller"><span class="toc-number">1.0.6.</span> <span class="toc-text">F.  Smaller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G-Orray"><span class="toc-number">1.0.7.</span> <span class="toc-text">G. Orray</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/06/Codeforces%20Round%20#827%20(Div.%204)%20A%20-%20G/" title="Codeforces Round"><img src="/img/%E5%A3%81%E7%BA%B8/code.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Codeforces Round"></a><div class="content"><a class="title" href="/2024/03/06/Codeforces%20Round%20#827%20(Div.%204)%20A%20-%20G/" title="Codeforces Round">Codeforces Round</a><time datetime="2024-03-06T13:55:44.004Z" title="发表于 2024-03-06 21:55:44">2024-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/02/Linux/" title="linux(持续更新)"><img src="/img/%E5%A3%81%E7%BA%B8/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux(持续更新)"></a><div class="content"><a class="title" href="/2024/01/02/Linux/" title="linux(持续更新)">linux(持续更新)</a><time datetime="2024-01-02T14:58:56.781Z" title="发表于 2024-01-02 22:58:56">2024-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/26/%E8%87%AA%E7%94%A8%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="自用算法笔记(持续更新)"><img src="/img/%E5%A3%81%E7%BA%B8/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A01.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用算法笔记(持续更新)"></a><div class="content"><a class="title" href="/2023/12/26/%E8%87%AA%E7%94%A8%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="自用算法笔记(持续更新)">自用算法笔记(持续更新)</a><time datetime="2023-12-26T14:51:20.737Z" title="发表于 2023-12-26 22:51:20">2023-12-26</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2023 - 2024 By contito</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="20707713" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><script src="//npm.elemecdn.com/leancloud-storage@4.13.1/dist/av-min.js"></script><canvas id="universe"></canvas><script defer="" src="/js/universe.js"></script><script type="text/javascript" src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/js/languages.js"></script><script data-pjax="" type="text/javascript" src="/js/calendar.js"></script><script type="text/javascript" src="/js/dianzan.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zindex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
